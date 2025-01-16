@@ -23,7 +23,7 @@ namespace CatalogAPI.Products.DeleteProduct
         {
             var productFromDB = await session.LoadAsync<Product>(command.Id, cancellationToken);
 
-            if (productFromDB is null) throw new ProductNotFoundException("Product not found!");
+            if (productFromDB is null) throw new ProductNotFoundException(command.Id);
 
             session.Delete(productFromDB);
             await session.SaveChangesAsync(cancellationToken);

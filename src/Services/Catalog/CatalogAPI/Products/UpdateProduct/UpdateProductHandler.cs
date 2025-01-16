@@ -41,7 +41,7 @@
 
             if (productFromDB is null)
             {
-                throw new ProductNotFoundException("Product not found!");
+                throw new ProductNotFoundException(command.Id);
             }
 
             productFromDB.Name = command.Name;
