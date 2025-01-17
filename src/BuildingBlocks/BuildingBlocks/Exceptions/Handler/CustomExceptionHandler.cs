@@ -15,8 +15,8 @@ namespace BuildingBlocks.Exceptions.Handler
             logger.LogError("Error Message: {exceptionMessage}, Time of occurrence {time}",
                             exception.Message, DateTime.Now);
 
-
-            (string Detail, string Title, int StatusCode) details = exception switch
+            // anonymous object declaration and deconstruction
+            (string Detail, string Title, int StatusCode) = exception switch
             {
                 InternalServerException =>
                     (
@@ -55,9 +55,9 @@ namespace BuildingBlocks.Exceptions.Handler
 
             var problemDetails = new ProblemDetails
             {
-                Title = details.Title,
-                Detail = details.Detail,
-                Status = details.StatusCode,
+                Title = Title,
+                Detail = Detail,
+                Status = StatusCode,
                 Instance = context.Request.Path
             };
 
