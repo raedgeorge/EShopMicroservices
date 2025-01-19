@@ -5,13 +5,15 @@
 
     public record GetBasketResult(ShoppingCart ShoppingCart);
 
-    internal class GetBasketQueryHandler () 
+    internal class GetBasketQueryHandler (IBasketRepository repository) 
                    : IQueryHandler<GetBasketQuery, GetBasketResult>
     {
         public async Task<GetBasketResult> Handle(GetBasketQuery query, CancellationToken cancellationToken)
         {
 
-            return new GetBasketResult(new ShoppingCart("raed abu sada"));
+            var basket = await repository.GetBaksket(query.UserName, cancellationToken);
+
+            return new GetBasketResult(basket);
         }
     }
 }
