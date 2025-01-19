@@ -5,7 +5,7 @@
 
     public record GetBasketResult(ShoppingCart ShoppingCart);
 
-    internal class GetBasketQueryHandler (IDocumentSession session) 
+    internal class GetBasketQueryHandler () 
                    : IQueryHandler<GetBasketQuery, GetBasketResult>
     {
         public async Task<GetBasketResult> Handle(GetBasketQuery query, CancellationToken cancellationToken)
