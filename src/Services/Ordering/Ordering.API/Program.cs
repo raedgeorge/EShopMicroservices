@@ -4,11 +4,11 @@ using Ordering.InfraStructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// add services to the container.
+
 builder.Services.AddApplicationServices()
                 .AddAPIServices()
                 .AddInfratructureServices(configuration: builder.Configuration);
-
-// add services to the container.
 
 var app = builder.Build();
 
