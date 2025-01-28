@@ -21,7 +21,7 @@ namespace Ordering.InfraStructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
+            // to apply all configs from classes using IEntityTypeConfiguration<Entity>
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(builder);
