@@ -25,7 +25,7 @@
             private set { }
         }
 
-        public static Order Crete(OrderId id,
+        public static Order Create(OrderId id,
                                   CustomerId customerId, 
                                   OrderName orderName, 
                                   Address shippingAddress, 
