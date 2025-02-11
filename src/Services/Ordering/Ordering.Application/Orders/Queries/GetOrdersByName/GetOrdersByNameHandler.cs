@@ -13,7 +13,7 @@ namespace Ordering.Application.Orders.Queries.GetOrdersByName
             var orders = await dbContext.Orders
                                 .Include(o => o.OrderItems)
                                 .AsNoTracking()
-                                .Where(o => o.OrderName.Value.Contains(query.Name, StringComparison.CurrentCultureIgnoreCase))
+                                .Where(o => o.OrderName.Value.Contains(query.Name))
                                 .OrderBy(o => o.OrderName.Value)
                                 .ToListAsync(cancellationToken);
 

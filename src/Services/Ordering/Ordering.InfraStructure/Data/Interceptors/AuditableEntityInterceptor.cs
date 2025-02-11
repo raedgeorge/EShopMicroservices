@@ -22,7 +22,7 @@ namespace Ordering.InfraStructure.Data.Interceptors
         }
 
 
-        private void UpdateEntities(DbContext? context)
+        private static void UpdateEntities(DbContext? context)
         {
             if (context is null) return;
 
