@@ -51,8 +51,7 @@ namespace Ordering.InfraStructure.Data.Extensions
 
         private static async Task SeedOrderWithItemsAsync(ApplicationDbContext context)
         {
-            
-            if (! await context.Orders.AnyAsync())
+            if (!await context.Orders.AnyAsync())
             {
                 await context.Orders.AddRangeAsync(InitialData.OrdersWithItems);
 

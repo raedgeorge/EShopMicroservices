@@ -1,5 +1,4 @@
-﻿
-using BuildingBlock.Messaging.Events;
+﻿using BuildingBlock.Messaging.Events;
 using MassTransit;
 
 namespace Basket.API.Basket.CheckoutBasket
