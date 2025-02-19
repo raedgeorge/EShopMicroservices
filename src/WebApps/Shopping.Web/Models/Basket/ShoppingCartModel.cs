@@ -22,7 +22,7 @@
         public string ProductName { get; set; } = default!;
     }
 
-    public record GetBasketResponse(ShoppingCartModel Cart);
+    public record GetBasketResponse(ShoppingCartModel ShoppingCart);
 
     public record StoreBasketRequest(ShoppingCartModel Cart);
 
